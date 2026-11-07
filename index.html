@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIZA AI - Premium Assistant</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fc;
+            color: #17243a;
+            min-height: 100vh;
+        }
+
+        header {
+            background: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px #0000000d;
+        }
+
+        .logo {
+            color: #176cff;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 90px 20px 35px;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #176cff;
+        }
+
+        .hero p {
+            color: #718096;
+            font-size: 17px;
+        }
+
+        .chat {
+            background: white;
+            max-width: 750px;
+            margin: 25px auto;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 8px 35px #0000000c;
+        }
+
+        .message {
+            background: #eef4ff;
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            flex: 1;
+            padding: 16px;
+            border: 1px solid #dce3ee;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        button {
+            background: #176cff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 0 25px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #0754d6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px;
+            color: #8793a5;
+        }
+
+        @media(max-width: 600px) {
+            .hero h1 { font-size: 32px; }
+            .chat { margin: 20px 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">RIZA AI</div>
+    <div>EN / RW</div>
+</header>
+
+<section class="hero">
+    <h1>Welcome to <span>RIZA AI</span></h1>
+    <p>Your intelligent assistant. Ask anything, learn anything.</p>
+</section>
+
+<section class="chat">
+    <div class="message" id="response">
+        Hello! I am RIZA AI. How can I help you today?
+    </div>
+
+    <div class="input-area">
+        <input type="text" id="message"
+               placeholder="Ask RIZA anything...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</section>
+
+<footer>
+    © 2026 RIZA AI. All rights reserved.
+</footer>
+
+<script>
+    function sendMessage() {
+        const input = document.getElementById("message");
+        const response = document.getElementById("response");
+
+        if (!input.value.trim()) return;
+
+        response.textContent =
+            "Your message: " + input.value +
+            " | RIZA AI connection will be added in the next steps.";
+
+        input.value = "";
+    }
+</script>
+
+</body>
+</html>
